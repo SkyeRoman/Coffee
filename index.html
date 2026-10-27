@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beans &amp; Brews Vision Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout idea: a striped café awning over a cream pin-board. Scrolling walks the street from one weekday cart to a family of cafés. */
+  --cream: #FFFAE8;
+  --paper: #FFFDF6;
+  --butter: #FFF1B5;
+  --powder: #C5DDF0;
+  --burgundy: #54352F;
+  --ink: #4A2F29;
+  --muted: #7A5E56;
+  --blue: #4E86BE;
+  --line: #E6D7BC;
+  --latte: #C99A6E;
+  --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --font-body: "Lora", Georgia, "Times New Roman", serif;
+  --font-script: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive;
+  --font-hand: "Caveat", "Bradley Hand", "Segoe Print", cursive;
+  --ease: cubic-bezier(.22, .9, .3, 1);
+  --radius: 18px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--cream); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--burgundy); text-wrap: balance; margin: 0; line-height: 1.08; letter-spacing: -0.005em; }
+h1 { font-size: clamp(2.5rem, 5.4vw, 4.4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3.1rem); }
+h3 { font-size: 1.6rem; }
+p { margin: 0; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); }
+.eyebrow { font-family: var(--font-display); font-weight: 600; font-size: .82rem; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); }
+.script { font-family: var(--font-script); font-weight: 400; color: var(--burgundy); }
+.sec { padding-block: clamp(56px, 8vw, 104px); position: relative; }
+.sec-head { display: grid; gap: 12px; max-width: 680px; margin-bottom: clamp(28px, 4vw, 44px); }
+.sec-head p { color: var(--muted); max-width: 60ch; }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 8px; }
+
+/* ------------------------------------------------ awning */
+.awning { position: relative; height: 58px; z-index: 5;
+  background: repeating-linear-gradient(90deg, var(--butter) 0 36px, var(--powder) 36px 72px);
+  border-top: 5px solid var(--burgundy); transform-origin: top center; animation: sway 7s ease-in-out infinite; }
+.awning::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 18px;
+  background:
+    radial-gradient(circle at 18px 0, var(--butter) 17.4px, transparent 18px) 0 0 / 72px 18px repeat-x,
+    radial-gradient(circle at 54px 0, var(--powder) 17.4px, transparent 18px) 0 0 / 72px 18px repeat-x;
+  filter: drop-shadow(0 3px 2px rgba(84, 53, 47, .10)); }
+@keyframes sway { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.06); } }
+
+/* ------------------------------------------------ nav */
+.nav { position: sticky; top: 10px; z-index: 20; display: flex; justify-content: center; margin-top: 26px; pointer-events: none; }
+.nav ul { pointer-events: auto; display: flex; gap: 4px; list-style: none; margin: 0; padding: 6px; border-radius: 999px;
+  background: rgba(255, 253, 246, .92); border: 1px solid var(--line); box-shadow: 0 6px 20px rgba(84, 53, 47, .08); backdrop-filter: blur(6px); max-width: calc(100vw - 24px); overflow-x: auto; scrollbar-width: none; }
+.nav a { display: block; white-space: nowrap; text-decoration: none; font-size: .86rem; padding: 7px 14px; border-radius: 999px; color: var(--burgundy); }
+.nav a:hover { background: var(--butter); }
+
+/* ------------------------------------------------ buttons */
+.btn { appearance: none; border: 1.5px solid var(--burgundy); background: var(--burgundy); color: var(--cream); font: 500 .95rem/1 var(--font-body);
+  padding: 13px 20px; border-radius: 999px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: transform .2s var(--ease), background .2s; }
+.btn:hover { transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--burgundy); }
+.btn.ghost:hover { background: var(--butter); }
+.btn.small { padding: 9px 14px; font-size: .85rem; }
+
+/* ------------------------------------------------ hero */
+.hero { padding-top: clamp(36px, 6vw, 70px); padding-bottom: clamp(40px, 6vw, 80px); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 70px); align-items: center; }
+.logo-stage { position: relative; }
+.logo-stage button { all: unset; cursor: pointer; display: block; border-radius: 24px; }
+.logo-stage button:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; }
+.logo-stage button img { width: 100%; max-width: 560px; margin-inline: auto; }
+.logo-stage .doodle { position: absolute; width: 34px; z-index: 1; opacity: .9; animation: bob 6s ease-in-out infinite; pointer-events: none; }
+.doodle.d1 { top: 6%; left: 4%; } .doodle.d2 { top: 12%; right: 6%; width: 40px; animation-delay: -2s; }
+.doodle.d3 { bottom: 12%; left: 0; width: 28px; animation-delay: -4s; } .doodle.d4 { bottom: 4%; right: 2%; width: 30px; animation-delay: -1s; }
+@keyframes bob { 0%, 100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-10px) rotate(5deg); } }
+.hero-copy { display: grid; gap: 18px; }
+.hero-copy .script { font-size: clamp(2.2rem, 4.4vw, 3.3rem); line-height: 1.1; margin-top: -4px; }
+.hero-copy p.lede { font-size: 1.08rem; color: var(--ink); max-width: 46ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.tap-hint { font-family: var(--font-hand); font-size: 1.25rem; color: var(--muted); text-align: center; margin-top: 4px; }
+
+/* ------------------------------------------------ dream */
+.dream { background: var(--paper); border-block: 1px solid var(--line); }
+.dream blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.7rem, 3.3vw, 2.5rem); line-height: 1.25; color: var(--burgundy); max-width: 30ch; text-wrap: balance; }
+.dream blockquote em { font-style: normal; background: linear-gradient(transparent 62%, var(--butter) 62%); }
+.dream-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.tickets { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.ticket { --c: var(--butter); background: var(--c); padding: 20px 22px 18px; border-radius: 14px;
+  -webkit-mask: radial-gradient(circle at 0 50%, transparent 11px, #000 11.5px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 11px, #000 11.5px) right / 51% 100% no-repeat;
+          mask: radial-gradient(circle at 0 50%, transparent 11px, #000 11.5px) left / 51% 100% no-repeat, radial-gradient(circle at 100% 50%, transparent 11px, #000 11.5px) right / 51% 100% no-repeat; }
+.ticket:nth-child(2n) { --c: var(--powder); }
+.ticket b { display: block; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.9rem, 3.4vw, 2.6rem); line-height: 1; color: var(--burgundy); }
+.ticket span { display: block; margin-top: 8px; font-size: .86rem; color: var(--ink); }
+.ticket small { display: block; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+/* ------------------------------------------------ journey */
+.street { position: relative; margin-bottom: 26px; padding-top: 44px; }
+.street .road { position: absolute; left: 6%; right: 6%; top: 72px; height: 0; border-top: 3px dashed var(--line); }
+.stops { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.stop { appearance: none; border: 0; background: none; cursor: pointer; display: grid; justify-items: center; gap: 6px; padding: 6px 4px; color: var(--ink); font: inherit; border-radius: 14px; }
+.stop .dot { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: var(--paper); border: 2px solid var(--line);
+  font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--burgundy); transition: background .3s, border-color .3s, transform .3s var(--ease); position: relative; z-index: 1; }
+.stop .nm { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; line-height: 1.15; color: var(--burgundy); text-align: center; }
+.stop .yr { font-size: .78rem; color: var(--muted); }
+.stop:hover .dot { transform: translateY(-3px); border-color: var(--burgundy); }
+.stop[aria-selected="true"] .dot { background: var(--butter); border-color: var(--burgundy); transform: scale(1.08); }
+.stop.done .dot { background: var(--powder); border-color: var(--powder); }
+.walker { position: absolute; top: 0; width: 44px; height: 40px; margin-left: -22px; transition: left .7s var(--ease); pointer-events: none; }
+.journey-grid { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: clamp(18px, 3vw, 34px); align-items: start; }
+.meter { position: sticky; top: 84px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 18px 20px; text-align: center; display: grid; gap: 10px; }
+.meter svg { width: 100%; max-width: 210px; margin: 0 auto; overflow: visible; }
+.meter .pct { font-family: var(--font-display); font-weight: 700; font-size: 2.4rem; line-height: 1; color: var(--burgundy); }
+.meter .lbl { font-size: .86rem; color: var(--muted); }
+.meter-controls { display: flex; justify-content: center; gap: 8px; }
+.icon-btn { appearance: none; width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid var(--burgundy); background: var(--paper); color: var(--burgundy); cursor: pointer; display: grid; place-items: center; transition: background .2s; }
+.icon-btn:hover { background: var(--butter); }
+.icon-btn svg { width: 18px; height: 18px; }
+#liquid { transform: translateY(var(--drop, 150px)); transition: transform 1.2s var(--ease); }
+.wave { animation: wave 3.5s linear infinite; }
+@keyframes wave { from { transform: translateX(0); } to { transform: translateX(-80px); } }
+.cup-steam path { opacity: 0; transition: opacity .6s; }
+.cup-steam.l1 path:nth-child(1), .cup-steam.l2 path:nth-child(-n+2), .cup-steam.l3 path { opacity: 1; }
+.steam { stroke-dasharray: 3 7; animation: steam 2.6s linear infinite; }
+@keyframes steam { from { stroke-dashoffset: 40; } to { stroke-dashoffset: 0; } }
+.stop-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(0, 1fr); }
+.scene-col { background: var(--cream); padding: 18px 18px 22px; display: grid; gap: 14px; align-content: start; border-right: 1px solid var(--line); }
+.scene-col svg { width: 100%; height: auto; border-radius: 16px; display: block; }
+.scene-col .feel { padding-inline: 6px; }
+.stop-body { padding: clamp(20px, 3vw, 32px); display: grid; gap: 14px; align-content: start; }
+.stop-body .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: .78rem; padding: 5px 11px; border-radius: 999px; background: var(--butter); color: var(--burgundy); border: 1px solid rgba(84, 53, 47, .14); }
+.chip.blue { background: var(--powder); }
+.stop-body h3 { font-size: clamp(1.7rem, 2.6vw, 2.2rem); }
+.feel { font-family: var(--font-hand); font-size: 1.5rem; line-height: 1.2; color: var(--muted); }
+.goals { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.goals li { position: relative; padding-left: 26px; font-size: .96rem; }
+.goals li::before { content: ""; position: absolute; left: 0; top: .42em; width: 15px; height: 14px; background: url("assets/heart2.png") center / contain no-repeat; }
+.gate { margin-top: 4px; padding: 12px 14px; border-radius: 12px; background: var(--cream); border: 1px dashed var(--muted); font-size: .9rem; }
+.gate b { font-family: var(--font-display); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .78rem; color: var(--muted); display: block; margin-bottom: 2px; }
+.fade-in { animation: fadeIn .55s var(--ease); }
+@keyframes fadeIn { from { opacity: .35; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* ------------------------------------------------ pin board */
+.board-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 18px; }
+.board-tools .hint { font-family: var(--font-hand); font-size: 1.3rem; color: var(--muted); margin-left: auto; }
+.board { position: relative; height: 1060px; border-radius: 26px; background-color: var(--paper);
+  background-image: radial-gradient(var(--line) 1.2px, transparent 1.3px); background-size: 22px 22px;
+  border: 10px solid transparent; border-image: repeating-linear-gradient(90deg, var(--butter) 0 18px, var(--powder) 18px 36px) 10; box-shadow: inset 0 0 0 1px var(--line); }
+.pin { position: absolute; left: 0; top: 0; touch-action: none; user-select: none; cursor: grab; transform: rotate(var(--r, 0deg)); transition: transform .25s var(--ease), box-shadow .25s; filter: drop-shadow(0 8px 14px rgba(84, 53, 47, .14)); }
+.pin.dragging { cursor: grabbing; transform: rotate(0deg) scale(1.04); transition: none; filter: drop-shadow(0 18px 24px rgba(84, 53, 47, .22)); }
+.pin.anim { transition: left .7s var(--ease), top .7s var(--ease), transform .7s var(--ease); }
+.pin::before { content: ""; position: absolute; top: -12px; left: 50%; width: 74px; height: 24px; margin-left: -37px; background: rgba(197, 221, 240, .82); transform: rotate(-3deg); border-radius: 3px; z-index: 2; }
+.pin.t2::before { background: rgba(255, 241, 181, .9); transform: rotate(4deg); }
+.pin.sticker::before { display: none; }
+.pin-photo { background: #fff; padding: 10px 10px 12px; width: 206px; }
+.pin-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; pointer-events: none; }
+.pin-photo figcaption { font-family: var(--font-hand); font-size: 1.25rem; text-align: center; margin-top: 6px; color: var(--ink); line-height: 1.1; }
+.pin-quote { width: 214px; padding: 26px 20px 18px; background: var(--butter); text-align: center; display: grid; gap: 8px; }
+.pin-quote.powder { background: var(--powder); }
+.pin-quote p { font-family: var(--font-script); font-size: 2rem; line-height: 1.15; color: var(--burgundy); }
+.pin-quote small, .pin-note small { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.pin-note { width: 176px; min-height: 160px; padding: 24px 16px 14px; background: var(--butter); display: grid; align-content: space-between; gap: 6px; }
+.pin-note.powder { background: var(--powder); }
+.pin-note p { font-family: var(--font-hand); font-size: 1.55rem; line-height: 1.1; color: var(--ink); }
+.pin-clip { width: 252px; padding: 16px 16px 14px; background: #fbf6e7; color: #3b2a26; display: grid; gap: 6px;
+  background-image: linear-gradient(rgba(84, 53, 47, .05) 1px, transparent 1px); background-size: 100% 22px; }
+.pin-clip .mast { font-family: var(--font-display); font-weight: 700; letter-spacing: .22em; text-transform: uppercase; font-size: .7rem; border-bottom: 2px solid #3b2a26; padding-bottom: 4px; display: flex; justify-content: space-between; }
+.pin-clip h4 { margin: 2px 0 0; font-family: var(--font-display); font-weight: 700; font-size: 1.45rem; line-height: 1.05; color: #2f211d; }
+.pin-clip p { font-size: .78rem; line-height: 1.45; columns: 2; column-gap: 12px; column-rule: 1px solid rgba(84, 53, 47, .2); }
+.pin-founder { width: 252px; padding: 16px; background: var(--paper); border: 2px solid var(--burgundy); border-radius: 14px; display: grid; grid-template-columns: 70px 1fr; gap: 12px; align-items: center; }
+.pin-founder img { width: 70px; }
+.pin-founder .k { font-family: var(--font-display); font-weight: 700; letter-spacing: .2em; font-size: .7rem; text-transform: uppercase; color: var(--muted); }
+.pin-founder .no { font-family: var(--font-script); font-size: 2.1rem; line-height: 1; color: var(--burgundy); }
+.pin-founder .d { font-size: .74rem; line-height: 1.35; color: var(--ink); grid-column: 1 / -1; border-top: 1px dashed var(--line); padding-top: 8px; }
+.pin-palette { width: 232px; padding: 14px; background: #fff; display: grid; gap: 8px; }
+.pin-palette .sw { display: grid; grid-template-columns: 34px 1fr; gap: 10px; align-items: center; font-size: .8rem; }
+.pin-palette .sw i { width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(84, 53, 47, .15); }
+.pin-palette .sw span { line-height: 1.2; }
+.pin-palette .sw code { font-size: .72rem; color: var(--muted); }
+.pin-art { width: 206px; padding: 12px; background: #fff; }
+.pin-art svg { width: 100%; height: auto; display: block; }
+.pin-art p { font-family: var(--font-hand); font-size: 1.2rem; text-align: center; margin-top: 4px; line-height: 1.1; }
+.pin-pattern { width: 180px; padding: 10px; background: #fff; }
+.pin-pattern img { width: 100%; aspect-ratio: 284 / 396; object-fit: cover; pointer-events: none; }
+.pin-pattern p { font-family: var(--font-hand); font-size: 1.2rem; text-align: center; margin-top: 6px; line-height: 1.1; }
+.pin.sticker { width: 58px; filter: none; }
+.pin.sticker img { width: 100%; pointer-events: none; }
+.board.is-grid { height: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 14px; padding: 26px 12px; align-items: start; grid-auto-flow: row dense; }
+.board.is-grid .pin-clip, .board.is-grid .pin-founder, .board.is-grid .pin-palette { grid-column: span 2; }
+.board.is-grid .pin { position: relative; left: auto !important; top: auto !important; width: 100%; cursor: pointer; touch-action: auto; }
+.board.is-grid .pin.sticker { display: none; }
+.board.is-grid .pin-palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+/* ------------------------------------------------ lightbox, toast */
+.lightbox { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 20px; background: rgba(59, 42, 38, .55); backdrop-filter: blur(3px); }
+.lightbox[hidden] { display: none; }
+.lb-card { position: relative; background: var(--paper); border-radius: 22px; padding: clamp(18px, 3vw, 28px); width: min(560px, 100%); max-height: calc(100% - 20px); overflow: auto; display: grid; gap: 14px; box-shadow: 0 24px 60px rgba(0, 0, 0, .25); animation: fadeIn .35s var(--ease); }
+.lb-card img { border-radius: 14px; width: 100%; max-height: 62vh; object-fit: contain; background: var(--cream); }
+.lb-card .lb-art { display: grid; place-items: center; padding: 10px; background: var(--cream); border-radius: 14px; }
+.lb-card .lb-art > * { transform: none !important; position: static !important; }
+.lb-card h3 { font-size: 1.7rem; }
+.lb-card p { color: var(--ink); }
+.lb-close { position: absolute; top: 12px; right: 12px; }
+.toast { position: fixed; left: 50%; bottom: 22px; transform: translate(-50%, 220%); opacity: 0; background: var(--burgundy); color: var(--cream); padding: 11px 18px; border-radius: 999px; font-size: .9rem; z-index: 60; transition: transform .35s var(--ease), opacity .35s; pointer-events: none; }
+.toast.show { transform: translate(-50%, 0); opacity: 1; }
+
+/* ------------------------------------------------ sips */
+.sips-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.sip { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 18px 20px; display: grid; gap: 10px; align-content: start; }
+.sip svg { display: block; width: 100%; max-width: 170px; height: auto; margin: 0 auto; overflow: visible; }
+.sip h3 { font-size: 1.45rem; }
+.sip .price { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; border-top: 1px dashed var(--line); padding-top: 10px; font-size: .88rem; color: var(--muted); }
+.sip .price b { font-family: var(--font-display); font-size: 1.6rem; color: var(--burgundy); font-weight: 700; }
+.sip p { font-size: .93rem; }
+.layer { transform: scaleY(0); transform-origin: 50% 100%; transform-box: fill-box; transition: transform .8s var(--ease) var(--d, 0s); }
+.top-art { opacity: 0; transition: opacity .5s var(--d, 0s); }
+.brewed .layer { transform: scaleY(1); } .brewed .top-art { opacity: 1; }
+.no-anim .layer, .no-anim .top-art { transition: none !important; }
+
+/* ------------------------------------------------ calculator */
+.calc { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 18px; }
+.panel { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(18px, 3vw, 30px); }
+.field { display: grid; gap: 8px; margin-bottom: 22px; }
+.field label { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-weight: 500; }
+.field output { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--burgundy); font-variant-numeric: tabular-nums; }
+input[type=range] { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; border-radius: 999px; background: linear-gradient(90deg, var(--powder) var(--p, 50%), var(--line) var(--p, 50%)); outline-offset: 6px; }
+input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; border-radius: 50%; background: var(--butter); border: 3px solid var(--burgundy); cursor: pointer; }
+input[type=range]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--butter); border: 3px solid var(--burgundy); cursor: pointer; }
+.fine { font-size: .8rem; color: var(--muted); }
+.result-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; align-items: end; }
+.big-num span { display: block; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.big-num strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 6vw, 3.8rem); line-height: 1; color: var(--burgundy); font-variant-numeric: tabular-nums; }
+.lines { display: grid; grid-template-columns: 1fr auto; gap: 6px 18px; margin: 18px 0; font-size: .92rem; font-variant-numeric: tabular-nums; }
+.lines dt { color: var(--muted); } .lines dd { margin: 0; text-align: right; }
+.status { padding: 14px 16px; border-radius: 14px; background: var(--butter); display: grid; gap: 4px; }
+.status b { font-family: var(--font-display); font-size: 1.35rem; color: var(--burgundy); }
+.status.neg { background: #F6E1DA; } .status.ok { background: var(--butter); } .status.pay { background: var(--powder); } .status.grow { background: #DDEBD8; }
+.track { position: relative; margin: 40px 6px 8px; height: 8px; border-radius: 999px; background: linear-gradient(90deg, #F2D9CF, var(--butter) 40%, var(--powder) 70%, #DDEBD8); }
+.track .tick { position: absolute; top: -6px; width: 2px; height: 20px; background: var(--burgundy); opacity: .5; }
+.track .tick span { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: .72rem; color: var(--muted); }
+.track .tick.up span { top: auto; bottom: 22px; }
+.track .knob { position: absolute; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%; background: var(--burgundy); border: 3px solid var(--paper); transition: left .4s var(--ease); }
+.cups { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 40px; min-height: 30px; }
+.cups i { width: 14px; height: 16px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 16'%3E%3Cpath d='M2 4h10l-1.2 10.2a1.4 1.4 0 0 1-1.4 1.3H4.6a1.4 1.4 0 0 1-1.4-1.3z' fill='%23C99A6E' stroke='%2354352F' stroke-width='1.2'/%3E%3Crect x='1' y='2' width='12' height='2.6' rx='1' fill='%23FFF1B5' stroke='%2354352F' stroke-width='1.1'/%3E%3C/svg%3E") center / contain no-repeat; animation: pop .35s var(--ease) both; }
+@keyframes pop { from { transform: scale(.2); opacity: 0; } to { transform: none; opacity: 1; } }
+.cups-cap { font-size: .8rem; color: var(--muted); margin-top: 6px; }
+
+/* ------------------------------------------------ footer */
+footer { position: relative; margin-top: 30px; background: var(--burgundy); color: var(--cream); padding: 70px 0 40px; }
+footer::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 18px;
+  background: radial-gradient(circle at 18px 18px, var(--burgundy) 17.4px, transparent 18px) 0 0 / 36px 18px repeat-x; }
+.foot-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 30px; align-items: center; }
+footer .script { color: var(--butter); font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.05; }
+footer p { color: #EBDCCF; font-size: .92rem; }
+.swatches { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+.swatch { appearance: none; border: 0; cursor: pointer; display: grid; justify-items: center; gap: 6px; background: none; color: var(--cream); font: inherit; font-size: .78rem; padding: 6px; border-radius: 14px; }
+.swatch i { width: 58px; height: 58px; border-radius: 50%; border: 2px solid rgba(255, 250, 232, .5); transition: transform .2s var(--ease); }
+.swatch:hover i { transform: scale(1.08); }
+.swatch code { font-size: .72rem; color: #EBDCCF; }
+.heart-burst { position: fixed; width: 26px; pointer-events: none; z-index: 70; animation: burst 1.4s var(--ease) forwards; }
+@keyframes burst { to { transform: translate(var(--x), var(--y)) rotate(var(--rot)) scale(.6); opacity: 0; } }
+
+/* ------------------------------------------------ responsive */
+@media (max-width: 980px) {
+  .sips-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journey-grid { grid-template-columns: 1fr; }
+  .meter { position: relative; top: 0; grid-template-columns: 120px 1fr; text-align: left; align-items: center; }
+  .meter svg { max-width: 120px; grid-row: span 3; }
+  .meter-controls { justify-content: flex-start; }
+  .stop-card { grid-template-columns: 1fr; }
+  .scene-col { border-right: 0; border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .hero-grid, .dream-grid, .calc, .foot-grid { grid-template-columns: 1fr; }
+  .logo-stage button img { max-width: 380px; }
+  .stop .nm { font-size: .86rem; } .stop .yr { display: none; } .stop .dot { width: 42px; height: 42px; font-size: 1.1rem; }
+  .street .road { top: 65px; }
+  .swatches { justify-content: flex-start; gap: 4px; }
+  .swatch i { width: 46px; height: 46px; }
+  #paletteLbl { text-align: left !important; }
+  .board-tools .hint { margin-left: 0; width: 100%; }
+}
+@media (max-width: 460px) {
+  .sips-grid { grid-template-columns: 1fr; }
+  .tickets { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .ticket { padding: 16px 16px 14px; }
+  .meter { grid-template-columns: 96px 1fr; }
+  .stop .nm { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="bb-stripes" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="10" height="20" fill="#FFF1B5"/><rect x="10" width="10" height="20" fill="#C5DDF0"/></pattern>
+    <pattern id="bb-stripes-sm" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="6" height="12" fill="#FFF1B5"/><rect x="6" width="6" height="12" fill="#C5DDF0"/></pattern>
+    <pattern id="bb-dots" width="14" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.1" fill="#E6D7BC"/></pattern>
+    <pattern id="bb-tiles" width="28" height="28" patternUnits="userSpaceOnUse"><rect width="28" height="28" fill="#FFFDF6"/><rect width="14" height="14" fill="#F4EAD2"/><rect x="14" y="14" width="14" height="14" fill="#F4EAD2"/></pattern>
+  </defs>
+</svg>
+
+<div class="awning" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Sections">
+  <ul>
+    <li><a href="#journey">The journey</a></li>
+    <li><a href="#pin-board">Pin board</a></li>
+    <li><a href="#signature-sips">Signature sips</a></li>
+    <li><a href="#dream-calculator">Dream calculator</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="logo-stage">
+        <img class="doodle d1" src="assets/heart1.png" alt="">
+        <img class="doodle d2" src="assets/bow.png" alt="">
+        <img class="doodle d3" src="assets/heart2.png" alt="">
+        <img class="doodle d4" src="assets/flower.png" alt="">
+        <button type="button" id="logoBtn" aria-label="Send some love: tap the logo">
+          <img src="assets/logo.png" alt="Beans &amp; Brews Bakery &amp; Café logo: a girl relaxing in a steaming coffee cup">
+        </button>
+        <p class="tap-hint">tap the cup for a little love</p>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">Vision board · 2027 to 2033</span>
+        <h1>From one weekday cart to a family of cafés</h1>
+        <p class="script">Take life one sip at a time</p>
+        <p class="lede">This is the picture to come back to on slow mornings: where Beans &amp; Brews starts, how it grows, and what it will look and feel like when it gets there.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#journey">Walk the journey</a>
+          <a class="btn ghost" href="#pin-board">Open the pin board</a>
+          <a class="btn ghost" href="#dream-calculator">Try the calculator</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dream" id="the-dream" aria-labelledby="dreamTitle">
+    <div class="wrap dream-grid">
+      <div style="display:grid; gap:14px">
+        <span class="eyebrow" id="dreamTitle">The dream in one sentence</span>
+        <blockquote>By 2033, Beans &amp; Brews is <em>the café Cape Town calls its own</em>: a flagship bakery, a fleet of striped trailers and kiosks, and partners pouring the same welcome.</blockquote>
+      </div>
+      <div class="tickets">
+        <div class="ticket"><small>First cup</small><b>1 Feb 2027</b><span>The weekday stand opens</span></div>
+        <div class="ticket"><small>Phase One gate</small><b>47 a day</b><span>Orders that pay you R10,000 a month</span></div>
+        <div class="ticket"><small>Founding regulars</small><b>100</b><span>Names on the founders' board</span></div>
+        <div class="ticket"><small>Goal by 2033</small><b>R10m+</b><span>Yearly sales across the family</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="journey" aria-labelledby="journeyTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">The journey</span>
+        <h2 id="journeyTitle">Five stops on one street</h2>
+        <p>Tap a stop to see what Beans &amp; Brews looks like there. Your cup fills as the business grows, and each stop only opens once the one before passes its gate.</p>
+      </div>
+      <div class="street">
+        <div class="road" aria-hidden="true"></div>
+        <svg class="walker" id="walker" viewBox="0 0 44 40" aria-hidden="true">
+          <path class="steam" d="M17 12c-3-4 3-6 0-10M25 12c-3-4 3-6 0-10" fill="none" stroke="#54352F" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M8 15h24v8a12 12 0 0 1-24 0z" fill="#FFF1B5" stroke="#54352F" stroke-width="2"/>
+          <path d="M32 18h3a4 4 0 0 1 0 8h-4" fill="none" stroke="#54352F" stroke-width="2"/>
+        </svg>
+        <div class="stops" role="tablist" aria-label="Growth phases" id="stops"></div>
+      </div>
+      <div class="journey-grid">
+        <aside class="meter" aria-live="polite">
+          <svg viewBox="0 0 200 210" aria-hidden="true">
+            <defs><clipPath id="cupClip"><path d="M34 46h132v52c0 44-30 74-66 74S34 142 34 98z"/></clipPath></defs>
+            <g class="cup-steam" id="cupSteam">
+              <path class="steam" d="M78 36c-8-10 8-14 0-26" fill="none" stroke="#54352F" stroke-width="3" stroke-linecap="round"/>
+              <path class="steam" d="M100 36c-8-10 8-14 0-28" fill="none" stroke="#54352F" stroke-width="3" stroke-linecap="round"/>
+              <path class="steam" d="M122 36c-8-10 8-14 0-26" fill="none" stroke="#54352F" stroke-width="3" stroke-linecap="round"/>
+            </g>
+            <g clip-path="url(#cupClip)">
+              <rect x="0" y="0" width="200" height="210" fill="#FFFDF6"/>
+              <g id="liquid">
+                <rect x="20" y="22" width="160" height="200" fill="#C99A6E"/>
+                <g class="wave"><path d="M20 26q10-8 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0v10H20z" fill="#FFF6E0"/></g>
+              </g>
+            </g>
+            <path d="M34 46h132v52c0 44-30 74-66 74S34 142 34 98z" fill="none" stroke="#54352F" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M166 62h10a20 20 0 0 1 0 40h-14" fill="none" stroke="#54352F" stroke-width="4" stroke-linecap="round"/>
+            <ellipse cx="100" cy="182" rx="80" ry="12" fill="#C5DDF0" stroke="#54352F" stroke-width="3"/>
+            <path d="M84 168c4 6 28 6 32 0" fill="none" stroke="#54352F" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="pct" id="pct">20%</div>
+          <div class="lbl" id="pctLbl">of the dream poured</div>
+          <div class="meter-controls">
+            <button class="icon-btn" type="button" id="prevBtn" aria-label="Previous stop"><svg viewBox="0 0 20 20"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="icon-btn" type="button" id="playBtn" aria-label="Play the journey"><svg viewBox="0 0 20 20" id="playIcon"><path d="M7 4.5v11l9-5.5z" fill="currentColor"/></svg></button>
+            <button class="icon-btn" type="button" id="nextBtn" aria-label="Next stop"><svg viewBox="0 0 20 20"><path d="m7.5 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+        </aside>
+        <article class="stop-card" id="stopCard" role="tabpanel" aria-live="polite"></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="pin-board" aria-labelledby="boardTitle" style="padding-top: 20px">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Inspiration</span>
+        <h2 id="boardTitle">The pin board</h2>
+        <p>Your brand kit, future headlines and the rules worth remembering, all on one board. Move things around until it feels right.</p>
+      </div>
+      <div class="board-tools">
+        <button class="btn small" type="button" id="shuffleBtn">Shuffle the board</button>
+        <button class="btn small ghost" type="button" id="tidyBtn">Tidy up</button>
+        <button class="btn small ghost" type="button" id="resetBtn">Reset</button>
+        <span class="hint" id="boardHint">drag the cards · tap one to look closer</span>
+      </div>
+      <div class="board" id="board"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="signature-sips" aria-labelledby="sipsTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">On the menu</span>
+        <h2 id="sipsTitle">Signature sips</h2>
+        <p>Four drinks that will carry the brand from the very first morning. Tap one to brew it, and see what each cup leaves in the business.</p>
+      </div>
+      <div class="sips-grid" id="sips"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="dream-calculator" aria-labelledby="calcTitle">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Dream calculator</span>
+        <h2 id="calcTitle">How many cups make the dream real?</h2>
+        <p>Slide the numbers and watch a month at the stand change. It starts at 47 orders a day, the point where Beans &amp; Brews pays you R10,000.</p>
+      </div>
+      <div class="calc">
+        <div class="panel">
+          <div class="field">
+            <label for="orders">Orders a day <output id="ordersOut" for="orders">47</output></label>
+            <input type="range" id="orders" min="5" max="150" step="1" value="47">
+          </div>
+          <div class="field">
+            <label for="aov">Average order <output id="aovOut" for="aov">R40</output></label>
+            <input type="range" id="aov" min="30" max="70" step="1" value="40">
+          </div>
+          <div class="field">
+            <label for="days">Trading days a month <output id="daysOut" for="days">21</output></label>
+            <input type="range" id="days" min="10" max="26" step="1" value="21">
+          </div>
+          <p class="fine">Uses the Phase One plan: product costs of 34.5% of sales, card fees of 2.4%, and running costs of about R14,600 in a 21-day month (site fee, part-time barista, transport, insurance and the rest). Profit is before your salary and tax.</p>
+        </div>
+        <div class="panel">
+          <div class="result-top">
+            <div class="big-num"><span>Profit this month</span><strong id="profit">R0</strong></div>
+            <div class="big-num" style="text-align:right"><span>Break-even</span><strong id="beOut" style="font-size: clamp(1.8rem, 3.6vw, 2.4rem)">28 a day</strong></div>
+          </div>
+          <dl class="lines">
+            <dt>Sales</dt><dd id="revOut">R0</dd>
+            <dt>Ingredients, cups and card fees</dt><dd id="varOut">R0</dd>
+            <dt>Running costs</dt><dd id="fixOut">R0</dd>
+          </dl>
+          <div class="status" id="status"><b id="statusTitle"></b><span id="statusText"></span></div>
+          <div class="track" aria-hidden="true">
+            <div class="tick" style="left: 27.27%"><span>Break-even</span></div>
+            <div class="tick up" style="left: 45.45%"><span>Pays you R10k</span></div>
+            <div class="tick" style="left: 72.73%"><span>Phase Two money</span></div>
+            <div class="knob" id="knob"></div>
+          </div>
+          <div class="cups" id="cups" role="img" aria-label="47 cups a day"></div>
+          <div class="cups-cap" id="cupsCap">Every cup is one order on a typical day.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div style="display:grid; gap:12px">
+      <p class="script">Take life one sip at a time</p>
+      <p>Beans &amp; Brews · Bakery &amp; Café · Cape Town. A vision board for the road from 2027 to 2033, built from the brand kit and the Phase One plan.</p>
+    </div>
+    <div>
+      <p style="margin-bottom:10px; text-align:right" class="eyebrow" id="paletteLbl"><span style="color:#EBDCCF">Tap a colour to copy it</span></p>
+      <div class="swatches" role="group" aria-labelledby="paletteLbl">
+        <button class="swatch" type="button" data-hex="#FFF1B5"><i style="background:#FFF1B5"></i>Butter yellow<code>#FFF1B5</code></button>
+        <button class="swatch" type="button" data-hex="#C5DDF0"><i style="background:#C5DDF0"></i>Powder blue<code>#C5DDF0</code></button>
+        <button class="swatch" type="button" data-hex="#FFFAE8"><i style="background:#FFFAE8"></i>Warm cream<code>#FFFAE8</code></button>
+        <button class="swatch" type="button" data-hex="#54352F"><i style="background:#54352F; border-color:#EBDCCF"></i>Old burgundy<code>#54352F</code></button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lb-card" role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+    <button class="icon-btn lb-close" type="button" id="lbClose" aria-label="Close"><svg viewBox="0 0 20 20"><path d="M5 5l10 10M15 5 5 15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button>
+    <div id="lbMedia"></div>
+    <h3 id="lbTitle"></h3>
+    <p id="lbText"></p>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const $ = (s, el = document) => el.querySelector(s);
+  const fmtR = (n) => (n < 0 ? "-R" : "R") + Math.abs(Math.round(n)).toLocaleString("en-US");
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
+    del(k) { try { localStorage.removeItem(k); } catch (e) { /* storage unavailable */ } },
+  };
+  function toast(msg) {
+    const t = $("#toast"); t.textContent = msg; t.classList.add("show");
+    clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("show"), 2200);
+  }
+
+  // ------------------------------------------------------------ SVG helpers
+  const S = "#54352F";
+  function scallop(x0, x1, y, r, fill) {
+    let d = `M${x0} ${y}`; const n = Math.round((x1 - x0) / (2 * r)); const rr = (x1 - x0) / (2 * n);
+    for (let i = 0; i < n; i++) d += ` a${rr} ${rr} 0 0 0 ${2 * rr} 0`;
+    return `<path d="${d} Z" fill="${fill || "url(#bb-stripes)"}" stroke="${S}" stroke-width="2" stroke-linejoin="round"/>`;
+  }
+  function grid(x, y, cols, rows, dx, dy, w, h, fill) {
+    let o = "";
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++)
+      o += `<rect x="${x + c * dx}" y="${y + r * dy}" width="${w}" height="${h}" rx="1.5" fill="${fill}" stroke="${S}" stroke-width="1"/>`;
+    return o;
+  }
+  const steam = (x, y, s = 1) => `<g fill="none" stroke="${S}" stroke-width="${2 * s}" stroke-linecap="round" opacity=".85">
+    <path class="steam" d="M${x} ${y}c${-5 * s} ${-7 * s} ${5 * s} ${-10 * s} 0 ${-18 * s}"/><path class="steam" d="M${x + 9 * s} ${y}c${-5 * s} ${-7 * s} ${5 * s} ${-10 * s} 0 ${-20 * s}"/></g>`;
+  const heart = (x, y, s, fill) => `<path d="M${x} ${y + 4 * s}c${-6 * s} ${-5 * s} ${-9 * s} ${-9 * s} ${-5 * s} ${-12 * s}c${2.6 * s} ${-2 * s} ${5 * s} ${-0.4 * s} ${5 * s} ${2 * s}c0 ${-2.4 * s} ${2.4 * s} ${-4 * s} ${5 * s} ${-2 * s}c${4 * s} ${3 * s} ${1 * s} ${7 * s} ${-5 * s} ${12 * s}z" fill="${fill || "#FFF1B5"}" stroke="${S}" stroke-width="1.6"/>`;
+  function person(x, shirt, cup) {
+    return `<g stroke="${S}" stroke-width="2" stroke-linejoin="round">
+      <rect x="${x - 12}" y="206" width="24" height="40" rx="11" fill="${shirt}"/>
+      <circle cx="${x}" cy="194" r="10" fill="#FBE7D2"/>
+      <path d="M${x - 9} 190q9-12 18 0" fill="#7A4B3A" stroke="none"/>
+      ${cup ? `<rect x="${x + 8}" y="214" width="9" height="11" rx="2" fill="#FFFDF6"/>` : ""}
+    </g>`;
+  }
+  const tag = (x, y, w, text) => `<g transform="translate(${x} ${y})"><rect width="${w}" height="26" rx="13" fill="${S}"/><text x="${w / 2}" y="17.5" text-anchor="middle" fill="#FFFAE8" font-family="Lora, Georgia, serif" font-size="12">${text}</text></g>`;
+  const ground = `<path d="M0 246H480V280a20 20 0 0 1-20 20H20A20 20 0 0 1 0 280Z" fill="#FFF4D2"/><path d="M0 246H480" stroke="${S}" stroke-width="2"/>`;
+  const backdrop = `<rect width="480" height="300" rx="20" fill="#FFFDF6"/><rect width="480" height="300" rx="20" fill="url(#bb-dots)"/>`;
+  const aframe = (x) => `<g stroke="${S}" stroke-width="2" stroke-linecap="round"><path d="M${x} 246 L${x + 16} 192 L${x + 32} 246" fill="none"/>
+    <rect x="${x + 3}" y="198" width="26" height="40" rx="3" fill="#3B302C"/></g>
+    <text x="${x + 16}" y="213" text-anchor="middle" font-family="Caveat, cursive" font-size="9" fill="#FFFAE8">Fresh</text>
+    <text x="${x + 16}" y="223" text-anchor="middle" font-family="Caveat, cursive" font-size="9" fill="#FFFAE8">bakes</text>
+    <text x="${x + 16}" y="233" text-anchor="middle" font-family="Caveat, cursive" font-size="9" fill="#FFFAE8">Good coffee</text>`;
+
+  // ------------------------------------------------------------ scenes
+  const scenes = [
+    // 1. the weekday stand at a business park
+    () => `<svg viewBox="0 0 480 300" role="img" aria-label="Illustration: a striped coffee cart under a striped umbrella outside office buildings, with two customers">
+      ${backdrop}
+      <circle cx="410" cy="60" r="28" fill="#FFF1B5"/>
+      <g stroke="${S}" stroke-width="2" stroke-linejoin="round">
+        <rect x="24" y="64" width="104" height="182" rx="6" fill="#EAF2FA"/>
+        <rect x="136" y="110" width="66" height="136" rx="6" fill="#F4F8FC"/>
+        <rect x="344" y="116" width="114" height="130" rx="6" fill="#EAF2FA"/>
+      </g>
+      ${grid(38, 80, 4, 7, 21, 22, 12, 13, "#C5DDF0")}
+      ${grid(148, 124, 2, 5, 22, 22, 13, 12, "#FFF1B5")}
+      ${grid(358, 130, 4, 5, 25, 22, 14, 12, "#C5DDF0")}
+      ${ground}
+      <line x1="262" y1="96" x2="262" y2="170" stroke="${S}" stroke-width="3" stroke-linecap="round"/>
+      <path d="M186 112Q262 44 338 112Z" fill="url(#bb-stripes)" stroke="${S}" stroke-width="2.5" stroke-linejoin="round"/>
+      ${scallop(186, 338, 112, 9.5)}
+      <rect x="190" y="166" width="148" height="10" rx="4" fill="${S}"/>
+      <rect x="198" y="176" width="132" height="56" rx="6" fill="url(#bb-stripes)" stroke="${S}" stroke-width="2.5"/>
+      <circle cx="264" cy="204" r="17" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      <text x="264" y="209" text-anchor="middle" font-family="Great Vibes, cursive" font-size="15" fill="${S}">B&amp;B</text>
+      <rect x="206" y="136" width="46" height="30" rx="5" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      <rect x="214" y="160" width="10" height="6" fill="${S}"/><rect x="232" y="160" width="10" height="6" fill="${S}"/>
+      <path d="M284 166a18 14 0 0 1 36 0Z" fill="#EAF2FA" stroke="${S}" stroke-width="2"/>
+      <ellipse cx="296" cy="161" rx="6" ry="3.5" fill="#E7B877" stroke="${S}" stroke-width="1.2"/><ellipse cx="308" cy="161" rx="6" ry="3.5" fill="#E7B877" stroke="${S}" stroke-width="1.2"/>
+      <circle cx="214" cy="238" r="9" fill="#FFFDF6" stroke="${S}" stroke-width="2"/><circle cx="314" cy="238" r="9" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      ${steam(222, 132)}
+      ${person(160, "#C5DDF0", true)}${person(132, "#FFF1B5", false)}
+      ${heart(160, 168, 0.9)}
+      ${aframe(370)}
+      ${tag(22, 262, 164, "Weekdays 06:45 to 13:30")}
+    </svg>`,
+    // 2. on the move: trailer at a Saturday market, Table Mountain behind
+    () => `<svg viewBox="0 0 480 300" role="img" aria-label="Illustration: a butter-yellow coffee trailer with a striped awning, bunting and a flat-topped mountain behind">
+      ${backdrop}
+      <circle cx="402" cy="64" r="26" fill="#FFF1B5"/>
+      <path d="M0 214L44 172L72 122L96 142L120 112L330 108L352 128L380 150Q404 120 430 150L480 178V246H0Z" fill="#DCE9F5"/>
+      <path d="M72 122L96 142L120 112L330 108L352 128" fill="none" stroke="#A9C7E3" stroke-width="2" stroke-linejoin="round"/>
+      ${ground}
+      <path d="M16 34Q240 92 464 34" fill="none" stroke="${S}" stroke-width="1.5"/>
+      ${(() => { let o = ""; for (let i = 1; i < 12; i++) { const t = i / 12, x = (1 - t) * (1 - t) * 16 + 2 * (1 - t) * t * 240 + t * t * 464, y = (1 - t) * (1 - t) * 34 + 2 * (1 - t) * t * 92 + t * t * 34; o += `<path d="M${x - 9} ${y - 1}L${x + 9} ${y - 1}L${x} ${y + 16}Z" fill="${i % 2 ? "#FFF1B5" : "#C5DDF0"}" stroke="${S}" stroke-width="1.3" stroke-linejoin="round"/>`; } return o; })()}
+      <path d="M120 232V156Q120 112 170 110H322Q378 112 378 162V232Z" fill="#FFF1B5" stroke="${S}" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="121.5" y="206" width="255" height="12" fill="url(#bb-stripes-sm)"/>
+      <path d="M121 206H377M121 218H377" stroke="${S}" stroke-width="1.2"/>
+      <circle cx="150" cy="150" r="13" fill="#C5DDF0" stroke="${S}" stroke-width="2"/>
+      <rect x="190" y="134" width="122" height="56" rx="6" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      <path d="M180 134H322L334 118H168Z" fill="url(#bb-stripes)" stroke="${S}" stroke-width="2" stroke-linejoin="round"/>
+      ${scallop(180, 322, 134, 9.5)}
+      <rect x="202" y="160" width="40" height="28" rx="4" fill="#EAF2FA" stroke="${S}" stroke-width="1.6"/>
+      <rect x="262" y="172" width="9" height="12" rx="2" fill="#FFF1B5" stroke="${S}" stroke-width="1.4"/><rect x="276" y="172" width="9" height="12" rx="2" fill="#C5DDF0" stroke="${S}" stroke-width="1.4"/>
+      ${steam(214, 156, .8)}
+      <text x="250" y="202" text-anchor="middle" font-family="Great Vibes, cursive" font-size="17" fill="${S}">Beans &amp; Brews</text>
+      <path d="M152 232a24 24 0 0 1 48 0" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      <circle cx="176" cy="236" r="15" fill="#FFFDF6" stroke="${S}" stroke-width="2.5"/><circle cx="176" cy="236" r="5" fill="${S}"/>
+      <path d="M378 222H414L424 238" fill="none" stroke="${S}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      ${aframe(430)}
+      ${person(90, "#C5DDF0", true)}
+      ${tag(22, 262, 150, "Saturdays and events")}
+    </svg>`,
+    // 3. kiosks
+    () => `<svg viewBox="0 0 480 300" role="img" aria-label="Illustration: a kiosk with a scalloped striped canopy and a pastry display, with three location pins above">
+      ${backdrop}
+      <path d="M0 236H480V280a20 20 0 0 1-20 20H20A20 20 0 0 1 0 280Z" fill="url(#bb-tiles)"/><path d="M0 236H480" stroke="${S}" stroke-width="2"/>
+      <path d="M96 52Q240 6 384 52" fill="none" stroke="${S}" stroke-width="1.6" stroke-dasharray="4 6"/>
+      ${[[96, 52, "1"], [240, 30, "2"], [384, 52, "3"]].map(([x, y, n]) => `<g transform="translate(${x} ${y - 30})"><path d="M0 0c-11 0-18 8-18 18 0 14 18 30 18 30s18-16 18-30c0-10-7-18-18-18z" fill="${n === "2" ? "#C5DDF0" : "#FFF1B5"}" stroke="${S}" stroke-width="2"/><text x="0" y="24" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="700" font-size="17" fill="${S}">${n}</text></g>`).join("")}
+      <rect x="140" y="86" width="200" height="10" rx="4" fill="${S}"/>
+      <rect x="146" y="96" width="188" height="26" fill="url(#bb-stripes)" stroke="${S}" stroke-width="2"/>
+      ${scallop(146, 334, 122, 9.4)}
+      <rect x="154" y="122" width="8" height="114" fill="#FFFDF6" stroke="${S}" stroke-width="2"/><rect x="318" y="122" width="8" height="114" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      <rect x="146" y="176" width="188" height="60" rx="6" fill="#FFFDF6" stroke="${S}" stroke-width="2.5"/>
+      <rect x="156" y="196" width="168" height="32" rx="3" fill="url(#bb-stripes)" stroke="${S}" stroke-width="1.5"/>
+      <rect x="168" y="148" width="74" height="28" rx="4" fill="#EAF2FA" stroke="${S}" stroke-width="2"/>
+      ${[180, 196, 212, 228].map((x, i) => `<ellipse cx="${x}" cy="${i % 2 ? 168 : 166}" rx="6.5" ry="4" fill="${i % 2 ? "#F3D5A8" : "#E7B877"}" stroke="${S}" stroke-width="1.2"/>`).join("")}
+      <rect x="258" y="142" width="48" height="34" rx="5" fill="#FFFDF6" stroke="${S}" stroke-width="2"/>
+      <rect x="266" y="168" width="10" height="8" fill="${S}"/><rect x="284" y="168" width="10" height="8" fill="${S}"/>
+      ${steam(270, 138, .9)}
+      <circle cx="240" cy="212" r="14" fill="#FFFDF6" stroke="${S}" stroke-width="2"/><text x="240" y="216.5" text-anchor="middle" font-family="Great Vibes, cursive" font-size="13" fill="${S}">B&amp;B</text>
+      <g stroke="${S}" stroke-width="2"><path d="M74 236l6-26h28l6 26z" fill="#C5DDF0"/><circle cx="84" cy="196" r="12" fill="#CFE3C8"/><circle cx="102" cy="190" r="13" fill="#DDEBD8"/><circle cx="94" cy="178" r="11" fill="#CFE3C8"/></g>
+      ${person(392, "#FFF1B5", true)}
+      ${tag(22, 262, 170, "Kiosks No. 1, 2 and 3")}
+    </svg>`,
+    // 4. the flagship bakery & café (photo from the brand kit)
+    () => `<svg viewBox="0 0 480 300" role="img" aria-label="The Beans and Brews flagship storefront from the brand kit, pinned like a polaroid, with a croissant and a cup">
+      ${backdrop}
+      <g transform="rotate(-4 140 150)">
+        <rect x="44" y="20" width="196" height="262" rx="4" fill="#fff" stroke="#E6D7BC"/>
+        <image href="assets/storefront.jpg" x="54" y="30" width="176" height="220" preserveAspectRatio="xMidYMid slice"/>
+        <text x="142" y="272" text-anchor="middle" font-family="Caveat, cursive" font-size="19" fill="${S}">our flagship, one day</text>
+        <rect x="112" y="10" width="64" height="20" rx="3" fill="rgba(197,221,240,.85)" transform="rotate(5 144 20)"/>
+      </g>
+      <text x="356" y="78" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="13" letter-spacing="4" fill="#7A5E56">BAKERY &amp; CAFÉ</text>
+      <text x="356" y="112" text-anchor="middle" font-family="Great Vibes, cursive" font-size="34" fill="${S}">Fresh bakes</text>
+      <text x="356" y="146" text-anchor="middle" font-family="Great Vibes, cursive" font-size="34" fill="${S}">good coffee</text>
+      <g transform="translate(290 176)" stroke="${S}" stroke-width="2" stroke-linejoin="round">
+        <path d="M4 40C10 16 40 6 58 10C76 6 104 16 110 40C96 52 18 52 4 40Z" fill="#E7B877"/>
+        <path d="M32 14C38 30 40 40 40 46M58 10V48M84 14C78 30 76 40 76 46" fill="none" stroke-width="1.6"/>
+      </g>
+      <g transform="translate(410 180)" stroke="${S}" stroke-width="2"><path d="M0 0h36l-4 40a5 5 0 0 1-5 4H9a5 5 0 0 1-5-4z" fill="url(#bb-stripes-sm)"/><rect x="-3" y="-8" width="42" height="9" rx="3" fill="#FFF1B5"/></g>
+      ${steam(420, 164, .8)}
+      ${heart(364, 268, 1.1, "#C5DDF0")}
+    </svg>`,
+    // 5. the Beans & Brews family
+    () => `<svg viewBox="0 0 480 300" role="img" aria-label="Illustration: four striped Beans and Brews locations along a winding path joined by hearts">
+      ${backdrop}
+      <path d="M0 232Q120 206 240 226T480 220V280a20 20 0 0 1-20 20H20A20 20 0 0 1 0 280Z" fill="#FFF4D2"/>
+      <path d="M0 232Q120 206 240 226T480 220" fill="none" stroke="${S}" stroke-width="2"/>
+      <path d="M58 246Q160 270 240 252T430 248" fill="none" stroke="${S}" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/>
+      ${[[72, 208, .8], [176, 214, .9], [290, 210, 1], [404, 204, .85]].map(([x, y, s], i) => {
+        const w = 70 * s, h = 54 * s;
+        return `<g transform="translate(${x - w / 2} ${y - h})">
+          <rect x="0" y="${14 * s}" width="${w}" height="${h - 14 * s}" rx="4" fill="${i % 2 ? "#FFFDF6" : "#FFF1B5"}" stroke="${S}" stroke-width="2"/>
+          <rect x="${-4 * s}" y="${4 * s}" width="${w + 8 * s}" height="${12 * s}" fill="url(#bb-stripes-sm)" stroke="${S}" stroke-width="1.6"/>
+          <rect x="${w * .18}" y="${24 * s}" width="${w * .3}" height="${h - 34 * s}" rx="2" fill="#EAF2FA" stroke="${S}" stroke-width="1.4"/>
+          <rect x="${w * .58}" y="${30 * s}" width="${w * .26}" height="${h - 30 * s}" rx="2" fill="#C5DDF0" stroke="${S}" stroke-width="1.4"/>
+          <path d="M${w / 2} ${4 * s}V${-10 * s}" stroke="${S}" stroke-width="1.4"/><path d="M${w / 2} ${-10 * s}l${12 * s} ${4 * s}l${-12 * s} ${4 * s}z" fill="${i % 2 ? "#FFF1B5" : "#C5DDF0"}" stroke="${S}" stroke-width="1.2"/>
+        </g>`; }).join("")}
+      ${heart(124, 236, .9)}${heart(234, 236, .9, "#C5DDF0")}${heart(348, 234, .9)}
+      <text x="240" y="76" text-anchor="middle" font-family="Great Vibes, cursive" font-size="40" fill="${S}">the Beans &amp; Brews family</text>
+      <text x="240" y="104" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="12.5" letter-spacing="3.5" fill="#7A5E56">TRAILERS · KIOSKS · CAFÉS · PARTNERS</text>
+      ${tag(22, 262, 176, "R10m+ yearly sales goal")}
+    </svg>`,
+  ];
+
+  // ------------------------------------------------------------ journey data
+  const phases = [
+    { n: 1, short: "Weekday stand", name: "The weekday stand", years: "Feb 2027 to Jan 2028", fill: 20,
+      text: "One striped cart at one Cape Town business park, weekday mornings only. You learn every regular's name and order, with a part-time barista beside you for the rush.",
+      goals: ["47 orders a day, three months in a row", "Half of all sales from regulars, and the Founding 100 signed up", "The R40,000 reserve still intact"],
+      feel: "Familiar faces at half past seven.", gate: "R10,000+ profit a month for three months, and a barista can run a shift from your manual." },
+    { n: 2, short: "On the move", name: "On the move", years: "2028", fill: 40,
+      text: "The striped trailer joins Saturday markets and events, paid for from Phase One profit. Two teams trade at once: the weekday stand and the trailer.",
+      goals: ["The trailer bought from profit, not debt", "Two or more event bookings a month", "One operations manual every barista follows"],
+      feel: "Saturday queues with the mountain behind.", gate: "R1.5m a year in sales and half of sales from repeat customers." },
+    { n: 3, short: "Kiosks", name: "Kiosks No. 1, 2 and 3", years: "2028 to 2030", fill: 60,
+      text: "Kiosk No. 1 opens at the best proven spot, part-funded by prepaid coffee packs from the community. Numbers 2 and 3 follow once No. 1 runs without you.",
+      goals: ["Each kiosk profitable within six months", "Prepaid packs help fund kiosk No. 1", "A lead barista running each site"],
+      feel: "Three pins on the map, one welcome.", gate: "Every kiosk profitable within six months of opening." },
+    { n: 4, short: "Flagship café", name: "The flagship Bakery & Café", years: "2030 to 2031", fill: 80,
+      text: "The brand's home: fresh bakes, powder-blue chairs, the striped awning and a room for the community. It's where baristas train and where the full café format gets proven.",
+      goals: ["A bakery menu of your own", "Community mornings and barista training", "The café format franchise partners will want"],
+      feel: "Fresh bakes, good coffee, happy people.", gate: "Three or more profitable sites, the manual finished and the trademark registered." },
+    { n: 5, short: "The family", name: "The Beans & Brews family", years: "2031 to 2033", fill: 100,
+      text: "Trailer franchises first, because they're the cheapest way in, then kiosks and cafés. Partners pour the same welcome, buy the house blend, and grow the family past R10 million a year.",
+      goals: ["One or two hand-picked pilot partners", "A franchise disclosure document and FASA membership", "R10m+ yearly sales across the family"],
+      feel: "The same welcome, in many places.", gate: "The dream: a family of cafés that all feel like the first one." },
+  ];
+
+  const stopsEl = $("#stops"), card = $("#stopCard"), walker = $("#walker");
+  let current = 0, playTimer = null;
+  stopsEl.innerHTML = phases.map((p, i) => `<button class="stop" type="button" role="tab" id="tab-${i}" aria-controls="stopCard" aria-selected="false" tabindex="-1">
+      <span class="dot">${p.n}</span><span class="nm">${p.short}</span><span class="yr">${p.years.replace(" to ", "–")}</span></button>`).join("");
+  const tabs = [...stopsEl.children];
+
+  function show(i, focus) {
+    current = (i + phases.length) % phases.length;
+    const p = phases[current];
+    tabs.forEach((t, k) => { t.setAttribute("aria-selected", k === current); t.tabIndex = k === current ? 0 : -1; t.classList.toggle("done", k < current); });
+    if (focus) tabs[current].focus();
+    card.setAttribute("aria-labelledby", `tab-${current}`);
+    card.innerHTML = `<div class="scene-col fade-in">${scenes[current]()}
+        <p class="feel">${p.feel}</p>
+        <div class="gate"><b>${current < 4 ? "Gate to the next stop" : "Where it all leads"}</b>${p.gate}</div>
+      </div>
+      <div class="stop-body fade-in">
+        <div class="meta"><span class="chip">Phase ${p.n} of 5</span><span class="chip blue">${p.years}</span></div>
+        <h3>${p.name}</h3>
+        <p>${p.text}</p>
+        <ul class="goals">${p.goals.map((g) => `<li>${g}</li>`).join("")}</ul>
+      </div>`;
+    // walker and cup
+    const r = tabs[current].getBoundingClientRect(), pr = stopsEl.getBoundingClientRect();
+    walker.style.left = (r.left - pr.left + r.width / 2) + "px";
+    const drop = 150 - (p.fill / 100) * 128;
+    $("#liquid").style.setProperty("--drop", drop + "px");
+    $("#pct").textContent = p.fill + "%";
+    $("#pctLbl").textContent = `of the dream poured · ${p.short}`;
+    const st = $("#cupSteam"); st.classList.remove("l1", "l2", "l3"); st.classList.add(p.fill >= 80 ? "l3" : p.fill >= 40 ? "l2" : "l1");
+    try { window.claude && window.claude.hot && window.claude.hot.snapshot && window.claude.hot.snapshot(() => ({ phase: current })); } catch (e) { /* not in viewer */ }
+  }
+  tabs.forEach((t, i) => t.addEventListener("click", () => { stopPlay(); show(i); }));
+  stopsEl.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); stopPlay(); show(current + (e.key === "ArrowRight" ? 1 : -1), true); }
+    if (e.key === "Home") { e.preventDefault(); show(0, true); } if (e.key === "End") { e.preventDefault(); show(4, true); }
+  });
+  $("#prevBtn").addEventListener("click", () => { stopPlay(); show(current - 1); });
+  $("#nextBtn").addEventListener("click", () => { stopPlay(); show(current + 1); });
+  const playIcon = $("#playIcon");
+  function stopPlay() {
+    if (!playTimer) return; clearInterval(playTimer); playTimer = null;
+    playIcon.innerHTML = '<path d="M7 4.5v11l9-5.5z" fill="currentColor"/>'; $("#playBtn").setAttribute("aria-label", "Play the journey");
+  }
+  $("#playBtn").addEventListener("click", () => {
+    if (playTimer) { stopPlay(); return; }
+    if (current === phases.length - 1) show(0); else show(current + 1);
+    playTimer = setInterval(() => { if (current === phases.length - 1) stopPlay(); else show(current + 1); }, 3600);
+    playIcon.innerHTML = '<rect x="5.5" y="4.5" width="3.2" height="11" rx="1" fill="currentColor"/><rect x="11.3" y="4.5" width="3.2" height="11" rx="1" fill="currentColor"/>';
+    $("#playBtn").setAttribute("aria-label", "Pause the journey");
+  });
+  function placeWalker() {
+    const r = tabs[current].getBoundingClientRect(), pr = stopsEl.getBoundingClientRect();
+    walker.style.left = (r.left - pr.left + r.width / 2) + "px";
+  }
+  window.addEventListener("resize", placeWalker);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeWalker);
+
+  // ------------------------------------------------------------ pin board
+  const latteArt = `<svg viewBox="0 0 200 200" role="img" aria-label="Latte art heart seen from above">
+    <circle cx="100" cy="104" r="88" fill="#C5DDF0" stroke="${S}" stroke-width="3"/>
+    <path d="M168 92h14a16 16 0 0 1 0 32h-12" fill="none" stroke="${S}" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="100" cy="104" r="66" fill="#FFFDF6" stroke="${S}" stroke-width="3"/>
+    <circle cx="100" cy="104" r="56" fill="#B07C55"/>
+    <circle cx="100" cy="104" r="56" fill="none" stroke="#D7A877" stroke-width="5" opacity=".7"/>
+    <path d="M100 140c-30-22-44-38-32-54 9-12 26-7 32 6 6-13 23-18 32-6 12 16-2 32-32 54z" fill="#FFF6E6"/>
+    <path d="M100 136V92" stroke="#B07C55" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>`;
+  const cards = [
+    { id: "store", type: "photo", src: "assets/storefront.jpg", cap: "the flagship, one day", x: 1.5, y: 24, r: -4, t: "The flagship Bakery & Café", d: "Stop 4 on the journey. Striped awning, blue chairs, a pastry counter and a chalkboard that says it all: fresh bakes, good coffee, happy people." },
+    { id: "q1", type: "quote", text: "Good things are baked, not rushed", by: "From the brand kit", x: 22, y: 34, r: 3, t: "Good things are baked, not rushed", d: "A reminder for the slow months. Phase One is about doing a small thing beautifully, every weekday." },
+    { id: "c1", type: "clip", date: "1 Feb 2027", head: "Beans & Brews pours its first cup", body: "A striped cart opens at a Cape Town business park. Regulars are already asking for the Butter-Honey Latte by name.", x: 41, y: 26, r: -2, t: "Future headline: 1 February 2027", d: "Launch day of Phase One. The tasting morning is on Thursday 28 January, so the first queue already knows you." },
+    { id: "pack", type: "photo", src: "assets/packaging.jpg", cap: "cups, bags & boxes", x: 63, y: 18, r: 4, t: "Cups, bags and boxes", d: "The striped packaging turns every cup into a little advert. Start with cup stickers in Phase One, and move to printed cups once volumes justify the order." },
+    { id: "n1", type: "note", text: "Count 1,200 people before you sign", by: "Phase One rule", x: 2, y: 384, r: 5, t: "Count 1,200 people before you sign", d: "Stand at the spot from 07:00 to 10:00 on two weekdays. About 4 in every 100 passers-by buy, so 1,200 people means roughly 48 orders a day." },
+    { id: "f", type: "founder", x: 19, y: 412, r: -3, t: "Founding 100", d: "The first 100 regulars get a numbered founder card, double loyalty stamps in February 2027 and their names on the founders' board on the cart." },
+    { id: "art", type: "art", cap: "every cup gets a heart", x: 44, y: 362, r: 2, t: "Every cup gets a heart", d: "Latte art is the small detail people photograph. It's also the fastest way to make a R39 flat white feel special." },
+    { id: "pal", type: "palette", x: 64, y: 396, r: -4, t: "The palette", d: "Butter yellow, powder blue, warm cream and old burgundy. Every sign, cup and post should use only these four." },
+    { id: "apron", type: "photo", src: "assets/apron.jpg", cap: "team aprons", x: 84, y: 356, r: 3, t: "Striped team aprons", d: "A uniform that matches the awning. Your first barista gets one on day one." },
+    { id: "c2", type: "clip", date: "2028", head: "The striped trailer hits the Saturday markets", body: "Paid for from Phase One profit, the trailer brings the weekday favourites to weekend crowds and events.", x: 2, y: 700, r: 3, t: "Future headline: 2028", d: "Stop 2 on the journey: on the move. The trailer only arrives once the weekday stand has paid for it." },
+    { id: "pat", type: "pattern", src: "assets/pattern.jpg", cap: "flagship wallpaper?", x: 27, y: 690, r: -5, t: "Pattern for the flagship", d: "The scalloped flower pattern from the brand kit, imagined as wallpaper behind the pastry counter." },
+    { id: "q2", type: "quote", text: "Take life one sip at a time", by: "The slogan", tone: "powder", x: 44, y: 690, r: 4, t: "Take life one sip at a time", d: "The Beans & Brews slogan. It belongs on the A-frame, the loyalty card and the founders' board." },
+    { id: "labels", type: "photo", src: "assets/labels.jpg", cap: "stickers & tags", x: 63, y: 690, r: -3, t: "Stickers and tags", d: "Round stickers for cups and bags, and the scalloped tag for the bakes. Cheap to print and very on-brand." },
+    { id: "c3", type: "clip", date: "2031", head: "The flagship Bakery & Café opens its doors", body: "After a stand, a trailer and three kiosks, Beans & Brews opens the café it sketched in 2026.", x: 79, y: 720, r: 2, t: "Future headline: 2031", d: "Stop 4 on the journey. The flagship is where the full café format gets proven for franchise partners." },
+    { id: "n2", type: "note", text: "47 a day = you can quit", by: "Phase One gate", tone: "powder", x: 86, y: 64, r: -6, t: "47 orders a day", d: "At an R40 average order, 47 orders a day earns about R10,000 a month after costs. Three months in a row is your quit trigger." },
+    { id: "s1", type: "sticker", src: "assets/heart1.png", x: 39, y: 330, r: -10, t: "", d: "" },
+    { id: "s2", type: "sticker", src: "assets/bow.png", x: 62, y: 330, r: 8, t: "", d: "" },
+    { id: "s3", type: "sticker", src: "assets/flower.png", x: 95, y: 640, r: 6, t: "", d: "" },
+    { id: "s4", type: "sticker", src: "assets/heart2.png", x: 21, y: 970, r: 12, t: "", d: "" },
+  ];
+  function cardHTML(c) {
+    switch (c.type) {
+      case "photo": return `<figure class="pin pin-photo${Math.random() > .5 ? " t2" : ""}" style="margin:0"><img src="${c.src}" alt="${c.t}"><figcaption>${c.cap}</figcaption></figure>`;
+      case "quote": return `<div class="pin pin-quote${c.tone ? " " + c.tone : ""} t2"><p>${c.text}</p><small>${c.by}</small></div>`;
+      case "note": return `<div class="pin pin-note${c.tone ? " " + c.tone : ""}"><p>${c.text}</p><small>${c.by}</small></div>`;
+      case "clip": return `<div class="pin pin-clip"><div class="mast"><span>Future headlines</span><span>${c.date}</span></div><h4>${c.head}</h4><p>${c.body}</p></div>`;
+      case "founder": return `<div class="pin pin-founder t2"><img src="assets/logo-icon.png" alt=""><div><div class="k">Founding 100</div><div class="no">No. 001</div></div><div class="d">Double stamps all February · your name on the cart · the first cup on us</div></div>`;
+      case "palette": return `<div class="pin pin-palette">${[["#FFF1B5", "Butter yellow"], ["#C5DDF0", "Powder blue"], ["#FFFAE8", "Warm cream"], ["#54352F", "Old burgundy"]].map(([h, n]) => `<div class="sw"><i style="background:${h}"></i><span>${n}<br><code>${h}</code></span></div>`).join("")}</div>`;
+      case "art": return `<div class="pin pin-art t2">${latteArt}<p>${c.cap}</p></div>`;
+      case "pattern": return `<div class="pin pin-pattern"><img src="${c.src}" alt="${c.t}"><p>${c.cap}</p></div>`;
+      case "sticker": return `<div class="pin sticker" aria-hidden="true"><img src="${c.src}" alt=""></div>`;
+    }
+  }
+  const board = $("#board");
+  board.innerHTML = cards.map(cardHTML).join("");
+  const pinEls = [...board.children];
+  pinEls.forEach((el, i) => { el.dataset.i = i; if (cards[i].type !== "sticker") { el.tabIndex = 0; el.setAttribute("role", "button"); el.setAttribute("aria-label", `Look closer: ${cards[i].t}`); } });
+  const freeMQ = window.matchMedia("(min-width: 860px) and (pointer: fine)");
+  let positions = null, zTop = 10;
+  const defaults = () => cards.map((c) => ({ x: c.x, y: c.y, r: c.r }));
+  function place(animate) {
+    const free = freeMQ.matches;
+    board.classList.toggle("is-grid", !free);
+    $("#boardHint").textContent = free ? "drag the cards · tap one to look closer" : "tap a card to look closer";
+    if (!free) { pinEls.forEach((el, i) => { el.style.setProperty("--r", (cards[i].r * 0.35) + "deg"); }); return; }
+    const W = board.clientWidth, H = board.clientHeight;
+    pinEls.forEach((el, i) => {
+      const p = positions[i];
+      const w = el.offsetWidth, h = el.offsetHeight;
+      const x = Math.max(6, Math.min(W - w - 6, (p.x / 100) * W));
+      const y = Math.max(14, Math.min(H - h - 6, p.y));
+      if (animate) { el.classList.add("anim"); setTimeout(() => el.classList.remove("anim"), 750); }
+      el.style.left = x + "px"; el.style.top = y + "px"; el.style.setProperty("--r", p.r + "deg");
+      el.style.zIndex = el.style.zIndex || (cards[i].type === "sticker" ? 30 : i + 1);
+    });
+  }
+  positions = store.get("bb-board-v1") || defaults();
+  if (positions.length !== cards.length) positions = defaults();
+  place(false);
+  freeMQ.addEventListener ? freeMQ.addEventListener("change", () => place(false)) : freeMQ.addListener(() => place(false));
+  window.addEventListener("resize", () => place(false));
+  document.fonts && document.fonts.ready.then(() => place(false));
+  window.addEventListener("load", () => place(false));
+
+  // drag
+  let drag = null;
+  board.addEventListener("pointerdown", (e) => {
+    const el = e.target.closest(".pin"); if (!el) return;
+    if (!freeMQ.matches) return;
+    e.preventDefault();
+    el.setPointerCapture(e.pointerId);
+    drag = { el, i: +el.dataset.i, sx: e.clientX, sy: e.clientY, ox: el.offsetLeft, oy: el.offsetTop, moved: false };
+    el.style.zIndex = ++zTop;
+  });
+  board.addEventListener("pointermove", (e) => {
+    if (!drag) return;
+    const dx = e.clientX - drag.sx, dy = e.clientY - drag.sy;
+    if (!drag.moved && Math.hypot(dx, dy) > 4) { drag.moved = true; drag.el.classList.add("dragging"); }
+    if (!drag.moved) return;
+    const W = board.clientWidth, H = board.clientHeight, w = drag.el.offsetWidth, h = drag.el.offsetHeight;
+    drag.el.style.left = Math.max(0, Math.min(W - w, drag.ox + dx)) + "px";
+    drag.el.style.top = Math.max(0, Math.min(H - h, drag.oy + dy)) + "px";
+  });
+  function endDrag() {
+    if (!drag) return;
+    const { el, i, moved } = drag; drag = null;
+    el.classList.remove("dragging");
+    if (moved) {
+      positions[i] = { x: (el.offsetLeft / board.clientWidth) * 100, y: el.offsetTop, r: positions[i].r };
+      store.set("bb-board-v1", positions);
+    } else if (cards[i].type !== "sticker") openCard(i);
+  }
+  board.addEventListener("pointerup", endDrag);
+  board.addEventListener("pointercancel", () => { if (drag) { drag.el.classList.remove("dragging"); drag = null; } });
+  board.addEventListener("click", (e) => {
+    if (freeMQ.matches) return;
+    const el = e.target.closest(".pin"); if (el && cards[+el.dataset.i].type !== "sticker") openCard(+el.dataset.i);
+  });
+  board.addEventListener("keydown", (e) => {
+    const el = e.target.closest(".pin"); if (!el) return;
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openCard(+el.dataset.i); }
+  });
+  $("#shuffleBtn").addEventListener("click", () => {
+    if (!freeMQ.matches) { // shuffle order in grid mode
+      const order = pinEls.slice().sort(() => Math.random() - .5); order.forEach((el) => board.appendChild(el)); toast("Board shuffled"); return;
+    }
+    // swap cards between the original slots, with a little jitter, so the board stays readable
+    const slots = defaults();
+    const idx = cards.map((c, i) => i).filter((i) => cards[i].type !== "sticker");
+    const perm = idx.slice().sort(() => Math.random() - .5);
+    positions = slots.map((p) => ({ ...p }));
+    idx.forEach((from, k) => {
+      const to = perm[k];
+      positions[from] = { x: slots[to].x + (Math.random() * 4 - 2), y: slots[to].y + Math.round(Math.random() * 40 - 20), r: Math.round(Math.random() * 14 - 7) };
+    });
+    cards.forEach((c, i) => { if (c.type === "sticker") positions[i] = { x: c.x + (Math.random() * 3 - 1.5), y: c.y + Math.round(Math.random() * 16 - 8), r: Math.round(Math.random() * 30 - 15) }; });
+    place(true); store.set("bb-board-v1", positions); toast("Board shuffled");
+  });
+  $("#tidyBtn").addEventListener("click", () => {
+    if (!freeMQ.matches) { pinEls.forEach((el) => board.appendChild(el)); return; }
+    const W = board.clientWidth; const cols = 5, colW = W / cols; let k = 0;
+    positions = pinEls.map((el, i) => {
+      if (cards[i].type === "sticker") return { x: [2, 30, 60, 90][i % 4], y: 1010, r: 0 };
+      const col = k % cols, row = Math.floor(k / cols); k++;
+      return { x: ((col * colW + (colW - el.offsetWidth) / 2) / W) * 100, y: 22 + row * 340, r: 0 };
+    });
+    place(true); store.set("bb-board-v1", positions); toast("All tidy");
+  });
+  $("#resetBtn").addEventListener("click", () => { positions = defaults(); store.del("bb-board-v1"); place(true); toast("Back to the original board"); });
+
+  // lightbox
+  const lb = $("#lightbox"); let lastFocus = null;
+  function openCard(i) {
+    const c = cards[i]; lastFocus = document.activeElement;
+    const media = $("#lbMedia");
+    if (c.type === "photo" || c.type === "pattern") media.innerHTML = `<img src="${c.src}" alt="${c.t}">`;
+    else { const clone = pinEls[i].cloneNode(true); clone.removeAttribute("style"); clone.removeAttribute("tabindex"); clone.removeAttribute("role"); clone.removeAttribute("aria-label"); clone.classList.remove("dragging", "anim"); media.innerHTML = ""; const wrapEl = document.createElement("div"); wrapEl.className = "lb-art"; wrapEl.appendChild(clone); media.appendChild(wrapEl); }
+    $("#lbTitle").textContent = c.t; $("#lbText").textContent = c.d;
+    lb.hidden = false; $("#lbClose").focus();
+  }
+  function closeLb() { lb.hidden = true; if (lastFocus) lastFocus.focus(); }
+  $("#lbClose").addEventListener("click", closeLb);
+  lb.addEventListener("click", (e) => { if (e.target === lb) closeLb(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) closeLb(); });
+
+  // ------------------------------------------------------------ signature sips
+  const sips = [
+    { name: "Butter-Honey Latte", price: 49, keep: 30.99, tag: "The signature", text: "Honey, a hint of vanilla and a double shot under silky milk. The drink people will ask for by name.",
+      layers: [["#5A3A2E", 0.30], ["#E9CFA9", 0.46], ["#FFF6E6", 0.16]], top: "honey" },
+    { name: "Flat White", price: 39, keep: 26.20, tag: "The everyday", text: "A double shot with velvety milk and a small heart on top. Priced just under the chains.",
+      layers: [["#5A3A2E", 0.36], ["#D9B48C", 0.44], ["#FFF6E6", 0.10]], top: "heart" },
+    { name: "Iced Latte", price: 48, keep: 32.86, tag: "Best earner", text: "For hot Cape Town afternoons. Cold milk, ice and espresso poured over the top.",
+      layers: [["#F3E4CF", 0.56], ["#9C6B4E", 0.26]], top: "ice", tall: true },
+    { name: "Chai Latte", price: 40, keep: 28.44, tag: "Winter favourite", text: "Warm spice, steamed milk and a dusting of cinnamon. The cosy one for May to August.",
+      layers: [["#C89B6D", 0.62], ["#FFF3E2", 0.22]], top: "cinnamon" },
+  ];
+  function sipSVG(s, k) {
+    const tall = s.tall;
+    const glass = tall ? "M50 18H150L142 196Q140 206 130 206H70Q60 206 58 196Z" : "M38 58H162L152 192Q150 204 136 204H64Q50 204 48 192Z";
+    const top = tall ? 18 : 58, bottom = tall ? 206 : 204, H = bottom - top;
+    let y = bottom, layers = "";
+    s.layers.forEach(([col, frac], j) => {
+      const h = H * frac; y -= h;
+      layers += `<rect class="layer" style="--d:${(j * 0.75).toFixed(2)}s" x="20" y="${y.toFixed(1)}" width="160" height="${(h + 0.6).toFixed(1)}" fill="${col}"/>`;
+    });
+    const d = (s.layers.length * 0.75).toFixed(2);
+    const surface = y;
+    let art = "";
+    if (s.top === "heart") art = `<path class="top-art" style="--d:${d}s" d="M100 ${surface + 16}c-10-7-15-12-11-18 3-4 9-2 11 2 2-4 8-6 11-2 4 6-1 11-11 18z" fill="#FFFDF6" stroke="#E9D4B8" stroke-width="1"/>`;
+    if (s.top === "honey") art = `<path class="top-art" style="--d:${d}s" d="M60 ${surface + 8}q20 10 40 0t40 0" fill="none" stroke="#E2A63B" stroke-width="5" stroke-linecap="round"/>`;
+    if (s.top === "cinnamon") art = `<g class="top-art" style="--d:${d}s" fill="#8A5A3B">${[66, 82, 98, 114, 130, 74, 106, 122, 90].map((x, i) => `<circle cx="${x}" cy="${surface + 6 + (i % 3) * 5}" r="1.8"/>`).join("")}</g>`;
+    if (s.top === "ice") art = `<g class="top-art" style="--d:${d}s" stroke="#54352F" stroke-width="1.6" fill="rgba(197,221,240,.75)"><rect x="66" y="70" width="28" height="26" rx="6" transform="rotate(-12 80 83)"/><rect x="104" y="96" width="28" height="26" rx="6" transform="rotate(14 118 109)"/><rect x="74" y="122" width="26" height="24" rx="6" transform="rotate(6 87 134)"/></g>`;
+    const straw = tall ? `<path d="M118 4L106 150" stroke="#54352F" stroke-width="7" stroke-linecap="round"/><path d="M118 4L106 150" stroke="#C5DDF0" stroke-width="4" stroke-linecap="round"/>` : "";
+    const handle = tall ? "" : `<path d="M160 82h10a18 18 0 0 1 0 36h-14" fill="none" stroke="#54352F" stroke-width="4" stroke-linecap="round"/>`;
+    const sauce = tall ? `<ellipse cx="100" cy="212" rx="62" ry="8" fill="#FFF1B5" stroke="#54352F" stroke-width="2.5"/>` : `<ellipse cx="100" cy="210" rx="78" ry="10" fill="#C5DDF0" stroke="#54352F" stroke-width="2.5"/>`;
+    return `<svg viewBox="0 0 200 222" role="img" aria-label="${s.name} in a glass">
+      <defs><clipPath id="sipClip${k}"><path d="${glass}"/></clipPath></defs>
+      ${sauce}
+      <g clip-path="url(#sipClip${k})"><rect x="0" y="0" width="200" height="222" fill="#FFFDF6"/>${layers}${art}</g>
+      ${straw}
+      <path d="${glass}" fill="none" stroke="#54352F" stroke-width="4" stroke-linejoin="round"/>
+      ${handle}
+      ${tall ? "" : `<g class="top-art" style="--d:${d}s">${steam(84, 50, 1.7)}</g>`}
+    </svg>`;
+  }
+  const sipsEl = $("#sips");
+  sipsEl.innerHTML = sips.map((s, k) => `<article class="sip">
+      <div class="brewed" id="sip-${k}">${sipSVG(s, k)}</div>
+      <span class="chip" style="justify-self:start">${s.tag}</span>
+      <h3>${s.name}</h3>
+      <p>${s.text}</p>
+      <div class="price"><span>R${s.price} · you keep about R${s.keep.toFixed(2)}</span></div>
+      <button class="btn small ghost" type="button" data-k="${k}">Brew it again</button>
+    </article>`).join("");
+  sipsEl.addEventListener("click", (e) => {
+    const b = e.target.closest("button[data-k]"); if (!b) return;
+    const g = $("#sip-" + b.dataset.k);
+    g.classList.add("no-anim"); g.classList.remove("brewed");
+    void g.getBoundingClientRect();
+    requestAnimationFrame(() => { g.classList.remove("no-anim"); requestAnimationFrame(() => g.classList.add("brewed")); });
+  });
+
+  // ------------------------------------------------------------ dream calculator
+  const VAR = 0.345 + 0.024, FIX_BASE = 9900, FIX_DAY = 224.52, OWNER = 10000, GROW = 25000;
+  const ordersIn = $("#orders"), aovIn = $("#aov"), daysIn = $("#days"), cupsEl = $("#cups");
+  let shownCups = 0;
+  function paint(input) { const p = ((input.value - input.min) / (input.max - input.min)) * 100; input.style.setProperty("--p", p + "%"); }
+  function calc() {
+    const o = +ordersIn.value, a = +aovIn.value, d = +daysIn.value;
+    [ordersIn, aovIn, daysIn].forEach(paint);
+    $("#ordersOut").textContent = o; $("#aovOut").textContent = "R" + a; $("#daysOut").textContent = d;
+    const rev = o * a * d, vr = rev * VAR, fx = FIX_BASE + FIX_DAY * d, pr = rev - vr - fx;
+    const be = fx / (a * (1 - VAR) * d);
+    $("#profit").textContent = fmtR(pr);
+    $("#beOut").textContent = Math.ceil(be) + " a day";
+    $("#revOut").textContent = fmtR(rev); $("#varOut").textContent = "-" + fmtR(vr); $("#fixOut").textContent = "-" + fmtR(fx);
+    const st = $("#status"); st.className = "status";
+    let title, text;
+    if (pr < 0) { st.classList.add("neg"); title = "Still brewing"; text = `Below break-even by ${fmtR(-pr)}. Phase One's first couple of months look like this, which is what the R40,000 reserve is for.`; }
+    else if (pr < OWNER) { st.classList.add("ok"); title = "Paying its way"; text = `The stand covers its costs with ${fmtR(pr)} to spare. Keep your shifts and keep pouring.`; }
+    else if (pr < GROW) { st.classList.add("pay"); title = "This pays you R10,000"; text = "Three months in a row like this is your quit trigger."; }
+    else { st.classList.add("grow"); title = "Phase Two money"; text = `${fmtR(pr - OWNER)} a month left after paying you. This is how the striped trailer gets paid for.`; }
+    $("#statusTitle").textContent = title; $("#statusText").textContent = " " + text;
+    const pos = Math.max(0, Math.min(100, ((pr + 15000) / 55000) * 100));
+    $("#knob").style.left = pos + "%";
+    // cups
+    const n = Math.min(o, 150);
+    if (n > shownCups) { const frag = document.createDocumentFragment(); for (let i = shownCups; i < n; i++) { const c = document.createElement("i"); c.style.animationDelay = reduce ? "0s" : Math.min((i - shownCups) * 6, 300) + "ms"; frag.appendChild(c); } cupsEl.appendChild(frag); }
+    else while (cupsEl.children.length > n) cupsEl.lastChild.remove();
+    shownCups = n;
+    cupsEl.setAttribute("aria-label", `${o} cups a day`);
+    $("#cupsCap").textContent = `${o} cups on a typical day · about ${(o * d).toLocaleString("en-US")} a month`;
+  }
+  [ordersIn, aovIn, daysIn].forEach((i) => i.addEventListener("input", calc));
+  calc();
+
+  // ------------------------------------------------------------ swatches, hearts
+  document.querySelectorAll(".swatch").forEach((b) => b.addEventListener("click", async () => {
+    const hex = b.dataset.hex;
+    try { await navigator.clipboard.writeText(hex); toast(`Copied ${hex}`); }
+    catch (e) { toast(`Copying is blocked here. The code is ${hex}`); }
+  }));
+  $("#logoBtn").addEventListener("click", (e) => {
+    const r = e.currentTarget.getBoundingClientRect();
+    const cx = e.clientX || r.left + r.width / 2, cy = e.clientY || r.top + r.height / 2;
+    const srcs = ["assets/heart1.png", "assets/heart2.png", "assets/bow.png", "assets/flower.png"];
+    for (let i = 0; i < 12; i++) {
+      const h = document.createElement("img"); h.src = srcs[i % 4]; h.alt = ""; h.className = "heart-burst";
+      const ang = (Math.PI * 2 * i) / 12 + Math.random() * .4, dist = 90 + Math.random() * 90;
+      h.style.left = cx - 13 + "px"; h.style.top = cy - 13 + "px";
+      h.style.setProperty("--x", Math.cos(ang) * dist + "px"); h.style.setProperty("--y", Math.sin(ang) * dist - 60 + "px"); h.style.setProperty("--rot", (Math.random() * 80 - 40) + "deg");
+      document.body.appendChild(h); setTimeout(() => h.remove(), 1500);
+    }
+  });
+
+  // ------------------------------------------------------------ boot
+  function start(data) { show(data && Number.isInteger(data.phase) ? data.phase : 0); }
+  try {
+    const hot = window.claude && window.claude.hot;
+    if (hot && hot.ready) hot.ready(start); else start((hot && hot.data) || {});
+  } catch (e) { start({}); }
+})();
+</script>
+</body>
+</html>
