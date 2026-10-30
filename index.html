@@ -1035,7 +1035,7 @@ footer p { color: #EBDCCF; font-size: .92rem; }
   $("#logoBtn").addEventListener("click", (e) => {
     const r = e.currentTarget.getBoundingClientRect();
     const cx = e.clientX || r.left + r.width / 2, cy = e.clientY || r.top + r.height / 2;
-    const srcs = ["assets/heart1.png", "assets/heart2.png", "assets/bow.png", "assets/flower.png"];
+    const srcs = ["heart1.png", "heart2.png", "bow.png", "flower.png"];
     for (let i = 0; i < 12; i++) {
       const h = document.createElement("img"); h.src = srcs[i % 4]; h.alt = ""; h.className = "heart-burst";
       const ang = (Math.PI * 2 * i) / 12 + Math.random() * .4, dist = 90 + Math.random() * 90;
